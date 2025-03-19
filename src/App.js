@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Counter from "./pages/Counter";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import { useSelector } from "react-redux";
+import Login from "./pages/Login";
+
+const PrivateRoute = ({ children }) => {
+  const user = useSelector((state) => state.userData.value);
+  console.log(user);
+
+  return user ? children : <Navigate to='/login' />;
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Router>
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path='/login'
+            element={<Login />}
+          />
+          <Route
+            path='/counter'
+            element={<Counter />}
+          />
+        </Routes>
+      </Router>
     </div>
   );
 }
