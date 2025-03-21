@@ -23,7 +23,6 @@ const Counter = () => {
       <div>
         <input
           placeholder='input amount'
-          a
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(e.target.value)}
         />
