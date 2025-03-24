@@ -18,7 +18,7 @@ const Login = () => {
 
     if (email === dummyUser.email && password === dummyUser.password) {
       dispatch(setUserData({ value: { username: "user123" }, code: 200 }));
-      navigate("/");
+      navigate("/main");
       message.success("Login Berhasil!");
     } else {
       message.error("Email atau Password anda salah");

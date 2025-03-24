@@ -1,0 +1,40 @@
+.dashboard-wrapper {
+    .dashboard-header {
+        color: #fff;
+    }
+    .dashboard-sider {
+        overflow: auto;
+        height: 100vh;
+        position: sticky;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+
+        .ant-layout-sider-trigger {
+            text-align: left;
+            padding: 0 16px;
+        }
+    }
+
+    .dashboard-layout {
+        margin-top: 64px;
+        transition: width 0.3s ease 0s, min-width 0.3s ease 0s,
+            max-width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+    }
+
+    .dashboard-content {
+        padding: 16px 24px;
+        overflow: initial;
+    }
+
+    .dashboard-content-setup {
+        padding: 0px 24px 16px;
+        overflow: initial;
+    }
+
+    .package-header,
+    .pelanggan-header {
+        background: #fff;
+    }
+}
