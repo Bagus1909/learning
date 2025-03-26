@@ -2,6 +2,8 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { Layout } from "antd";
 import "./dashboard.less";
+import Sidebar from "../components/sidebar/Sidebar";
+import Navbar from "../components/navbar/Navbar";
 
 const { Header, Sider, Content } = Layout;
 
@@ -13,7 +15,7 @@ const Dashboard = () => {
           className='dashboard-header'
           theme='light'
         >
-          Header
+          <Navbar />
         </Header>
         <Layout>
           <Sider
@@ -23,9 +25,9 @@ const Dashboard = () => {
             theme='light'
             collapsible
           >
-            Sider
+            <Sidebar />
           </Sider>
-          <Content>
+          <Content className='dashboard-content'>
             <Outlet />
           </Content>
         </Layout>

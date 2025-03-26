@@ -50,11 +50,11 @@ const Login = () => {
           rules={[
             {
               required: true,
-              message: "Masukan email",
+              message: "Masukan password",
             },
           ]}
         >
-          <Input.Password placeholder='Enter your email' />
+          <Input.Password placeholder='Enter your password' />
         </Form.Item>
 
         <Form.Item>
